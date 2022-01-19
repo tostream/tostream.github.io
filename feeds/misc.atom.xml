@@ -11,4 +11,14 @@ In a short period, the following topic will be my main focus of my study(all in 
 &lt;li&gt;domain-driven architecture&lt;/li&gt;
 &lt;li&gt;functional programming&lt;/li&gt;
 &lt;li&gt;design pattern revisit&lt;/li&gt;
-&lt;/ol&gt;</content><category term="misc"></category></entry></feed>
+&lt;/ol&gt;</content><category term="misc"></category></entry><entry><title>Long execution time</title><link href="/long-execution-time.html" rel="alternate"></link><published>2021-12-16T00:00:00+00:00</published><updated>2021-12-16T00:00:00+00:00</updated><author><name>wp.F</name></author><id>tag:None,2021-12-16:/long-execution-time.html</id><summary type="html">&lt;h1&gt;How to dealing with a long execution time sql&lt;/h1&gt;
+&lt;p&gt;First thing, identify locking and waiting object.We have to make sure if the sql will lock or wait any table.&lt;/p&gt;
+&lt;p&gt;The easiest way is to extract the explained plan.Normally, you will only get the estimated plan. In Postgresql, you …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;How to dealing with a long execution time sql&lt;/h1&gt;
+&lt;p&gt;First thing, identify locking and waiting object.We have to make sure if the sql will lock or wait any table.&lt;/p&gt;
+&lt;p&gt;The easiest way is to extract the explained plan.Normally, you will only get the estimated plan. In Postgresql, you can use "analyze" to execute your sql once and get a real plan with execution time.
+*Diff SQL will have diff behaiver, but basically it will show you the sequence and the cost of every step&lt;/p&gt;
+&lt;p&gt;we can find from the documenation:
+"ANALYZE requires only a read lock on the target table, so it can run in parallel with other activity on the table."
+which means we can mimic the process without a huge impact to the system.&lt;/p&gt;
+&lt;p&gt;Second, a bad index and bad constraint can impact the execution time.
+Fragmenation is always the first thing of a bad index, we should always aware of that and rebuild the index regularly)especially in a operational DB.&lt;/p&gt;</content><category term="misc"></category></entry></feed>
