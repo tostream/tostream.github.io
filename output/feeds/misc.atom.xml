@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>SoftwareEngineeringLearning - misc</title><link href="/" rel="alternate"></link><link href="/feeds/misc.atom.xml" rel="self"></link><id>/</id><updated>2021-12-16T00:00:00+00:00</updated><entry><title>Event-Driven architecture</title><link href="/event-driven-architecture.html" rel="alternate"></link><published>2021-12-16T00:00:00+00:00</published><updated>2021-12-16T00:00:00+00:00</updated><author><name>wp.F</name></author><id>tag:None,2021-12-16:/event-driven-architecture.html</id><content type="html">&lt;h1&gt;Event-Driven architecture&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>SoftwareEngineeringLearning - misc</title><link href="/" rel="alternate"></link><link href="/feeds/misc.atom.xml" rel="self"></link><id>/</id><updated>2022-02-17T00:00:00+00:00</updated><entry><title>Restart my Leetcode journey</title><link href="/restart-my-leetcode-journey.html" rel="alternate"></link><published>2022-02-17T00:00:00+00:00</published><updated>2022-02-17T00:00:00+00:00</updated><author><name>wp.F</name></author><id>tag:None,2022-02-17:/restart-my-leetcode-journey.html</id><summary type="html">&lt;p&gt;Restart my Leetcode journey:&lt;/p&gt;
+&lt;p&gt;It has been over 2 years of my last leetcode submission.I wasn't aware I will come back.
+After going back to be an engineer, I found how weak I am and how useful it is of the algorithms and Data Structures.
+Going back to Leetcode …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Restart my Leetcode journey:&lt;/p&gt;
+&lt;p&gt;It has been over 2 years of my last leetcode submission.I wasn't aware I will come back.
+After going back to be an engineer, I found how weak I am and how useful it is of the algorithms and Data Structures.
+Going back to Leetcode is difficult. It looks like you know everything, but you just cannot remember when you should brute force to solve it asap.(I mean from a context perspective)&lt;/p&gt;
+&lt;p&gt;I would always suggest to have a book instead of randomly find some resources from Internet.
+At least, the sequence of the topic has been organized. It comes with a purpose, maybe the level of difficulty.&lt;/p&gt;</content><category term="misc"></category></entry><entry><title>Event-Driven architecture</title><link href="/event-driven-architecture.html" rel="alternate"></link><published>2021-12-16T00:00:00+00:00</published><updated>2021-12-16T00:00:00+00:00</updated><author><name>wp.F</name></author><id>tag:None,2021-12-16:/event-driven-architecture.html</id><content type="html">&lt;h1&gt;Event-Driven architecture&lt;/h1&gt;
 &lt;p&gt;To start an event-driven architecture application. We have to understand few things.
 1. what is a event
 2. how do we receive an event
@@ -11,4 +19,14 @@ In a short period, the following topic will be my main focus of my study(all in 
 &lt;li&gt;domain-driven architecture&lt;/li&gt;
 &lt;li&gt;functional programming&lt;/li&gt;
 &lt;li&gt;design pattern revisit&lt;/li&gt;
-&lt;/ol&gt;</content><category term="misc"></category></entry></feed>
+&lt;/ol&gt;</content><category term="misc"></category></entry><entry><title>Long execution time</title><link href="/long-execution-time.html" rel="alternate"></link><published>2021-12-16T00:00:00+00:00</published><updated>2021-12-16T00:00:00+00:00</updated><author><name>wp.F</name></author><id>tag:None,2021-12-16:/long-execution-time.html</id><summary type="html">&lt;h1&gt;How to dealing with a long execution time sql&lt;/h1&gt;
+&lt;p&gt;First thing, identify locking and waiting object.We have to make sure if the sql will lock or wait any table.&lt;/p&gt;
+&lt;p&gt;The easiest way is to extract the explained plan.Normally, you will only get the estimated plan. In Postgresql, you …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;How to dealing with a long execution time sql&lt;/h1&gt;
+&lt;p&gt;First thing, identify locking and waiting object.We have to make sure if the sql will lock or wait any table.&lt;/p&gt;
+&lt;p&gt;The easiest way is to extract the explained plan.Normally, you will only get the estimated plan. In Postgresql, you can use "analyze" to execute your sql once and get a real plan with execution time.
+*Diff SQL will have diff behaiver, but basically it will show you the sequence and the cost of every step&lt;/p&gt;
+&lt;p&gt;we can find from the documenation:
+"ANALYZE requires only a read lock on the target table, so it can run in parallel with other activity on the table."
+which means we can mimic the process without a huge impact to the system.&lt;/p&gt;
+&lt;p&gt;Second, a bad index and bad constraint can impact the execution time.
+Fragmenation is always the first thing of a bad index, we should always aware of that and rebuild the index regularly)especially in a operational DB.&lt;/p&gt;</content><category term="misc"></category></entry></feed>
