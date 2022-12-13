@@ -4,6 +4,14 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+babel = "*"
+dash = "*"
+dash-bootstrap-components = "*"
+pandas = "*"
+pandas-stubs = "*"
+plotly = "*"
+pyyaml = "*"
+python-i18n = {extras = ["yaml"], version = "*"}
 
 [dev-packages]
 
