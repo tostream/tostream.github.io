@@ -7,7 +7,7 @@ from src.components.layout import create_layout
 def main() -> None:
     """single page personal project"""
     app:Dash = Dash(external_stylesheets=[dbc.themes.BOOTSTRAP,dbc.icons.BOOTSTRAP])
-    app.title = "Ben Fung"
+    app.title = "Frontend Bootcamp"
     app.layout = create_layout(app)
     app.run()
     

@@ -1,1 +1,17 @@
 *venv*/*
+src/components/boxes.py
+src/components/footer.py
+src/components/instructor.py
+src/components/layout.py
+src/components/learn.py
+src/components/nav.py
+src/components/questions.py
+src/components/section.py
+src/components/__pycache__/boxes.cpython-310.pyc
+src/components/__pycache__/footer.cpython-310.pyc
+src/components/__pycache__/instructor.cpython-310.pyc
+src/components/__pycache__/layout.cpython-310.pyc
+src/components/__pycache__/learn.cpython-310.pyc
+src/components/__pycache__/nav.cpython-310.pyc
+src/components/__pycache__/questions.cpython-310.pyc
+src/components/__pycache__/section.cpython-310.pyc

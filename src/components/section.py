@@ -6,12 +6,16 @@ from dash import Dash, Input, Output, State, html
 def create_section(app) -> html.Div:
     return html.Div(
         dbc.Container(
-        create_firstSect(app))
+        create_firstSect(app)),
+        className="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start"
     )
 
 def create_firstSect(app) -> html.Div:
     return html.Div(
-        create_webdev(app),
+        [create_webdev(app),
+            html.Img(
+                src=app.get_asset_url('img/showcase.svg'),
+                className="img-fluid w-50 d-non d-sm-block"),],
         className="d-sm-flex align-items-center justify-content-between",
     )
 
@@ -38,7 +42,7 @@ def create_webdev(app:Dash) -> html.Div:
                 "Start The Enrollment",
                 className="btn btn-primary btn-lg",
                 id="enroll-button",
-                n_clicks=0)
+                n_clicks=0),
         ]
     )
 

@@ -1,16 +1,16 @@
 
 import dash_bootstrap_components as dbc
-from dash import html
+from dash import Dash, html
 
 
-def render() -> html.Section:
+def render(app:Dash) -> html.Section:
     return html.Section(
         dbc.Container(
             dbc.Row(
               [
                 dbc.Col(
                     html.Img(
-                        src="img/fundamentals.svg",
+                        src=app.get_asset_url('img/fundamentals.svg'),
                         className="img-fluid",
                         alt=''),
                     md=True,
@@ -38,10 +38,10 @@ def render() -> html.Section:
             )
         ),
         id="learn",
-        className="p-5"
+        className="p-5 p-lg-0 pt-lg-5 text-center text-sm-start"
     )
 
-def render2() -> html.Section:
+def render2(app:Dash) -> html.Section:
     return html.Section(
         dbc.Container(
             dbc.Row(
@@ -66,7 +66,7 @@ def render2() -> html.Section:
                 ),
                 dbc.Col(
                     html.Img(
-                        src="img/react.svg",
+                        src=app.get_asset_url('img/react.svg'),
                         className="img-fluid",
                         alt=''),
                     md=True,
@@ -75,6 +75,5 @@ def render2() -> html.Section:
                 class_name="lign-items-center justify-content-between"
             )
         ),
-        id="learn",
-        className="p-5"
+        className="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start"
     )

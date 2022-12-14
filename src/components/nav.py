@@ -7,12 +7,14 @@ def create_toggler()-> dbc.NavbarToggler:
 
 def create_menu() -> html.Ul:
     return html.Ul([
-                        dbc.NavItem(dbc.NavLink("What You'll Learn",
-                        href="#learn")),
-                        dbc.NavItem(dbc.NavLink("Question",
-                        href="#questions")),
-                        dbc.NavItem(dbc.NavLink("Instructors",
-                        href="#instructors")),
+                        dbc.NavItem(dbc.NavLink("About",
+                        href="#about")),
+                        dbc.NavItem(dbc.NavLink("Resume",
+                        href="#resume")),
+                        dbc.NavItem(dbc.NavLink("Blog",
+                        href="#blog")),
+                        dbc.NavItem(dbc.NavLink("Work",
+                        href="#work")),
                     ],className="navbar-nav ms-auto")
 
 def create_toggler_nav(app:Dash)-> dbc.Navbar:
@@ -34,7 +36,7 @@ def create_toggler_nav(app:Dash)-> dbc.Navbar:
                     # Use row and col to control vertical alignment of logo / brand
                     dbc.Row(
                         [
-                            dbc.Col(dbc.NavbarBrand("Ben Personal Bio", className="ms-2")),
+                            dbc.Col(dbc.NavbarBrand("Frontend Bootcamp", className="ms-2")),
                         ],
                         align="center",
                         className="g-0",
