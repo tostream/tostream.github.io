@@ -1,6 +1,6 @@
 
 import dash_bootstrap_components as dbc
-from dash import  html
+from dash import html
 
 
 def create_boxes() -> html.Section:
@@ -76,8 +76,8 @@ def create_boxes() -> html.Section:
                         ),
                         md=True,),
                 ],
+                class_name="g-4"
             )
         ),
-        className="p-5"
-
+        className="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start"
     )
