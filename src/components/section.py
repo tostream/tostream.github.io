@@ -22,14 +22,14 @@ def create_firstSect(app) -> html.Div:
 def create_webdev(app:Dash) -> html.Div:
     
     @app.callback(
-        Output("enroll", "hidden"),
-        [Input("enroll-button", "n_clicks")],
-        [State("enroll", "hidden")],
+        Output("enroll", "is_open"),
+        [Input("enroll-button", "n_clicks"), Input("close", "n_clicks")],
+        [State("enroll", "is_open")],
     )
-    def toggle_enroll(n, hidden):
-        if n:
-            return not hidden
-        return hidden  
+    def toggle_enroll(n1, n2, is_open):
+        if n1 or n2:
+            return not is_open
+        return is_open
 
     return html.Div(
         [
@@ -47,11 +47,19 @@ def create_webdev(app:Dash) -> html.Div:
     )
 
 def create_enrollment_form() -> html.Div:
-    return html.Div(
-        [''],
-        className="model Fade",
-        id="enroll",
-        tabIndex="-1",
-        hidden=True,
+    return html.Div([
+        dbc.Modal(
+            [
+                dbc.ModalHeader(dbc.ModalTitle("Header")),
+                dbc.ModalBody("This is the enroll form"),
+                dbc.ModalFooter(
+                    dbc.Button(
+                        "Close", id="close", className="btn-secondary", n_clicks=0
+                    )
+                ),
+            ],
+            id="enroll",
+            is_open=False,
+        ),
+    ]
     )
-
